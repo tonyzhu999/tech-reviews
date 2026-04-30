@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%Y年%m月%d日" }}
+      </time>
+      {% if page.category %}
+        <span class="post-category">{{ page.category }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.jd_link or page.taobao_link %}
+  <div class="affiliate-box">
+    <h3>🎯 购买推荐</h3>
+    <p>经过综合评测，我们推荐以下购买渠道（通过链接购买可能获得佣金）：</p>
+    <div class="buy-buttons">
+      {% if page.jd_link %}
+      <a href="{{ page.jd_link }}" class="buy-button jd-button" target="_blank" rel="nofollow">
+        🛒 去京东购买
+      </a>
+      {% endif %}
+      {% if page.taobao_link %}
+      <a href="{{ page.taobao_link }}" class="buy-button taobao-button" target="_blank" rel="nofollow">
+        🛍️ 去淘宝购买
+      </a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</article>

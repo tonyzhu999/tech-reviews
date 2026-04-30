@@ -1,0 +1,13 @@
+generate_content.py
+generate_content.py:Zone.Identifier
+_site/
+Gemfile.lock
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+.DS_Store
+*.log
+monitor.lock
+STATUS.md.new
